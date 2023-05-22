@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+:root{
+    --primary-color: #daaa63;
+    --secondary-color: #2C1810;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background: #F9F3EE;
+    font-family: 'Montserrat', sans-serif;
+}

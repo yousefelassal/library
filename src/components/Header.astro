@@ -2,13 +2,13 @@
 import ProfileIcon from '../components/ProfileIcon.astro';
 ---
 
-<div class="sticky grid-container justify-items-center p-4">
+<div class="sticky grid-container place-items-center p-4 align-middle">
     <div class="justify-self-start">
         <h2 class="text-4xl">Library</h2>
     </div>
     <div class="flex gap-8">
-        <button class="btn btn-primary">Books</button>
-        <button class="btn btn-primary">AudioBooks</button>
+        <h3 class="page">Books</h3>
+        <h3 class="page">AudioBooks</h3>
     </div>
     <div class="justify-self-end">
         <ProfileIcon />
@@ -16,10 +16,16 @@ import ProfileIcon from '../components/ProfileIcon.astro';
 </div>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
-
     h2{
         font-family: 'Eczar', serif;
+    }
+
+    h2, h3{
+        color: var(--secondary-color);
+    }
+
+    h3.page{
+        cursor: pointer;
     }
 
     .grid-container {
