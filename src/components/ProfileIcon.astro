@@ -1,0 +1,74 @@
+<div class="profile-container">
+    <button id="profile" class="profile hover:cursor-pointer justify-center items-center flex bg-current shadow-sm">
+        <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 48 48"
+                width="24px"
+                height="24px"
+                fill="#fff"
+                ><path
+                    class="bg-current"
+                    d="M24 4A10 10 0 1024 24 10 10 0 1024 4zM36.021 28H11.979C9.785 28 8 29.785 8 31.979V33.5c0 3.312 1.885 6.176 5.307 8.063C16.154 43.135 19.952 44 24 44c7.706 0 16-3.286 16-10.5v-1.521C40 29.785 38.215 28 36.021 28z"
+                ></path></svg
+            >
+    </button>
+    <div id="profile-popover">
+        <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
+            <div class="py-1">
+                <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100">Settings</a>
+                <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100">Projects</a>
+                <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100">Sign Out</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .profile {
+        width: 2.3rem;
+        height: 2.3rem;
+        border-radius: 50%;
+        border: 1px solid var(--color-border);
+    }
+
+    .profile-container{
+        position:relative;
+    }
+
+    #profile-popover{
+        display:none;
+    }
+
+    #profile-popover.hidden{
+        display:block;
+    }
+
+    .profile.active{
+        border: 1px solid white;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #profile-popover {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+</style>
+
+<script>
+    const profilePopover = document.getElementById('profile-popover');
+    const profileButton = document.getElementById('profile');
+
+    profileButton.addEventListener('click', () => {
+        profilePopover.classList.toggle('hidden');
+        profileButton.classList.toggle('active');
+    });
+</script>
