@@ -6,8 +6,8 @@ import ProfileIcon from '../components/ProfileIcon.astro';
     <div class="justify-self-start">
         <h2 class="text-4xl">Library</h2>
     </div>
-    <div class="flex gap-8">
-        <h3 class="page">Books</h3>
+    <div class="flex gap-4 place-items-center">
+        <h3 class="page active">Books</h3>
         <h3 class="page">AudioBooks</h3>
     </div>
     <div class="justify-self-end">
@@ -26,6 +26,19 @@ import ProfileIcon from '../components/ProfileIcon.astro';
 
     h3.page{
         cursor: pointer;
+        @apply text-sm px-4 py-2;
+    }
+
+    h3.page:hover{
+        @apply text-gray-500;
+    }
+
+    h3.page.active{
+        @apply bg-[var(--primary-color)] rounded-full;
+    }
+
+    h3.page.active:hover{
+        @apply text-current;
     }
 
     .grid-container {
@@ -37,3 +50,13 @@ import ProfileIcon from '../components/ProfileIcon.astro';
     }
 
 </style>
+
+<script>
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+        page.addEventListener('click', () => {
+            pages.forEach(page => page.classList.remove('active'));
+            page.classList.add('active');
+        })
+    })
+</script>
