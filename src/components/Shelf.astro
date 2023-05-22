@@ -12,6 +12,10 @@ import Search from './Search.astro';
         <div class="book-inside">
         </div>
     </div>
+    <div class="absolute top-[-18rem] left-[55vw] flex gap-2">
+        <h2 class="author text-md text-right" style="transform: rotate(180deg);">Author</h2>
+        <img src="/src/images/fyodor-dostoevsky.webp" class="w-40 h-auto rounded-md" />
+    </div>
     <div class="absolute top-[-18rem] left-12 grid gap-4">
         <h1 class="title text-6xl">Featured Book</h1>
         <h2 class="text-[0.9rem] text-stone-500">Explore new worlds from authors</h2>
@@ -25,6 +29,12 @@ import Search from './Search.astro';
         font-family: 'Libre Caslon Text', serif;
         width: 9ch;
         color: var(--secondary-color);
+    }
+
+    .author{
+        font-family: 'Libre Caslon Text', serif;
+        color: var(--secondary-color);
+        writing-mode:vertical-rl;
     }
 
     .book {
