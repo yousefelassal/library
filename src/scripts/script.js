@@ -10,4 +10,4 @@ function Book(title, author, pages, read) {
 }
 
 const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false);
-theHobbit.info();
+console.log(theHobbit.info());
