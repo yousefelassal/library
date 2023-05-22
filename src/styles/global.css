@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap');
 
 
 :root{
@@ -16,4 +17,7 @@
 body{
     background: #F9F3EE;
     font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
 }

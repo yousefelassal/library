@@ -2,7 +2,7 @@
 
 ---
 
-<div class="relative w-screen top-[60vh] bg-[#EAE1D4] h-8 shadow-xl">
+<div class="relative min-w-full top-[60vh] bg-[#EAE1D4] h-8 shadow-xl">
     <div class="absolute top-6 inset-0 bg-[#F5F2EC] h-2"></div>
     <div class="book absolute top-[-23rem] left-96">
         <div class="book-cover cover1">
@@ -12,9 +12,18 @@
         <div class="book-inside">
         </div>
     </div>
+    <div class="absolute top-0 left-2">
+        <h1 class="title text-8xl">Featured Book</h1>
+    </div>
 </div>
 
 <style>
+
+    .title{
+        font-family: 'Libre Caslon Text', serif;
+        width: 9ch;
+    }
+
     .book {
     width: 225px;
     height: 350px;
