@@ -18,3 +18,11 @@ console.log(Object.getPrototypeOf(theHobbit)===Book.prototype);
 function addBookToLibrary(book) {
     myLibrary.push(book);
 }
+
+
+const addBtn = document.getElementById('addBtn');
+const addDialog = document.getElementById('addDialog');
+
+addBtn.addEventListener('click', () => {
+    addDialog.showModal();
+});
