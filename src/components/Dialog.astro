@@ -1,58 +1,102 @@
 ---
-
 ---
 
-<dialog id="addDialog" class="flex flex-col items-center rounded-md w-80 h-96 bg-white shadow-md top-[20vh] left-[calc(50vw-10rem)] backdrop-filter">
-    <form method="dialog" class="p-4 flex flex-col gap-4 h-full w-full items-center">
-        <header class="flex items-center">
+<dialog
+    id="addDialog"
+    class="flex flex-col items-center rounded-md w-80 h-96 bg-white shadow-md top-[20vh] left-[calc(50vw-10rem)] backdrop-filter"
+>
+    <form
+        method="dialog"
+        class="p-4 flex flex-col gap-4 h-full w-full items-center"
+    >
+        <!-- <header class="flex justify-center items-center w-full"> -->
             <h1 class="text-lg text-center">Add your book</h1>
-            <button class="rounded-full p-2" id="cancel" type="reset" uxp-variant="primary">
-<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="24px" height="24px">    <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"/></svg>
+            <button
+                class="rounded-full p-2 hover:fill-red-500 absolute top-2 right-2"
+                id="cancel"
+                type="reset"
+                uxp-variant="primary"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 30 30"
+                    width="24px"
+                    height="24px"
+                >
+                    <path
+                        d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"
+                    ></path></svg
+                >
             </button>
-        </header>
-        <input class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner" type="text" uxp-quiet="true" id="title" placeholder="Title" maxlength="20"/>
-        <input class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner" type="text" uxp-quiet="true" id="author" placeholder="Author" maxlength="20"/>
-        <input class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner" type="number" uxp-quiet="true" id="pages" placeholder="Pages" maxlength="20"/>
+        <!-- </header> -->
+        <input
+            class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner"
+            type="text"
+            uxp-quiet="true"
+            id="title"
+            placeholder="Title"
+            maxlength="20"
+        />
+        <input
+            class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner"
+            type="text"
+            uxp-quiet="true"
+            id="author"
+            placeholder="Author"
+            maxlength="20"
+        />
+        <input
+            class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner"
+            type="number"
+            uxp-quiet="true"
+            id="pages"
+            placeholder="Pages"
+            maxlength="20"
+        />
         <footer>
-            <button class="rounded-md bg-[var(--primary-color)] p-2 w-56 text-[var(--secondary-color)] hover:bg-[#c1995b]" id="confirm" type="submit" uxp-variant="cta">Add</button>
+            <button
+                class="rounded-md bg-[var(--primary-color)] p-2 w-56 text-[var(--secondary-color)] hover:bg-[#c1995b]"
+                id="confirm"
+                type="submit"
+                uxp-variant="cta">Add</button
+            >
         </footer>
     </form>
 </dialog>
 
 <style>
-    dialog::backdrop{
+    dialog::backdrop {
         backdrop-filter: blur(2px);
         transition: backdrop-filter 0.5s ease-in-out;
     }
 
-    dialog[open]{
+    dialog[open] {
         animation: fadeIn 0.1s ease-in-out;
     }
 
-    dialog.hide{
+    dialog.hide {
         animation: fadeOut 0.1s ease-in-out;
     }
 
-    @keyframes fadeIn{
-        from{
+    @keyframes fadeIn {
+        from {
             opacity: 0;
             scale: 0;
         }
-        to{
+        to {
             opacity: 1;
             scale: 1;
         }
     }
 
-    @keyframes fadeOut{
-        from{
+    @keyframes fadeOut {
+        from {
             opacity: 1;
             scale: 1;
         }
-        to{
+        to {
             opacity: 0;
             scale: 0;
         }
     }
-
 </style>

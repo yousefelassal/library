@@ -35,7 +35,7 @@ addDialog.addEventListener('click', (e) => {
       addDialog.classList.add("hide");
       setTimeout(() => {
           addDialog.close();
-      },100);
+      },105);
     }
 });
 
@@ -43,5 +43,5 @@ cancel.addEventListener("click", () => {
     addDialog.classList.add("hide");
     setTimeout(() => {
         addDialog.close();
-    },100);
+    },105);
 });
