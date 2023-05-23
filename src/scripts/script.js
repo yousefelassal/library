@@ -26,3 +26,10 @@ const addDialog = document.getElementById('addDialog');
 addBtn.addEventListener('click', () => {
     addDialog.showModal();
 });
+
+//close dialog on click outside
+addDialog.addEventListener('click', (e) => {
+    if(e.target === addDialog) {
+        addDialog.close();
+    }
+});
