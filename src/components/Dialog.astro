@@ -2,3 +2,16 @@
 
 ---
 
+<dialog id="addDialog" class="rounded-md w-80 h-96 bg-white shadow-md">
+    <form method="dialog">
+        <h1>Add a book</h1>
+        <label>
+            <span>Author</span>
+            <input type="text" uxp-quiet="true" id="author" placeholder="Author" />
+        </label>
+        <footer>
+            <button id="cancel" type="reset" uxp-variant="primary">Cancel</button>
+            <button id="confirm" type="submit" uxp-variant="cta">Add</button>
+        </footer>
+    </form>
+</dialog>
