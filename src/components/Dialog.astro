@@ -9,26 +9,24 @@
         method="dialog"
         class="p-4 flex flex-col gap-4 h-full w-full items-center"
     >
-        <!-- <header class="flex justify-center items-center w-full"> -->
-            <h1 class="text-lg text-center">Add your book</h1>
-            <button
-                class="rounded-full p-2 hover:fill-red-500 absolute top-2 right-2"
-                id="cancel"
-                type="reset"
-                uxp-variant="primary"
+        <h1 class="text-lg text-center">Add your book</h1>
+        <button
+            class="rounded-full p-2 hover:fill-red-500 absolute top-2 right-2"
+            id="cancel"
+            type="reset"
+            uxp-variant="primary"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 30 30"
+                width="24px"
+                height="24px"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 30 30"
-                    width="24px"
-                    height="24px"
-                >
-                    <path
-                        d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"
-                    ></path></svg
-                >
-            </button>
-        <!-- </header> -->
+                <path
+                    d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"
+                ></path></svg
+            >
+        </button>
         <input
             class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner"
             type="text"
@@ -53,6 +51,19 @@
             placeholder="Pages"
             maxlength="20"
         />
+        <div class="flex items-center">
+            <label class="radio-button">
+                <input value="book" name="radio" type="radio">
+                <span class="radio"></span>
+                Book
+            </label>
+            
+            <label class="radio-button">
+                <input value="audiobook" name="radio" type="radio">
+                <span class="radio"></span>
+                AudioBook
+            </label>
+        </div>
         <footer>
             <button
                 class="rounded-md bg-[var(--primary-color)] p-2 w-56 text-[var(--secondary-color)] hover:bg-[#c1995b]"
@@ -99,4 +110,41 @@
             scale: 0;
         }
     }
+
+    .radio-button {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px;
+  position: relative;
+  align-items: center;
+}
+
+.radio-button input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transform: translateZ(-25px);
+  transition: all 0.3s ease-in-out;
+}
+
+.radio-button input[type="radio"]:checked + .radio {
+  border-color: var(--secondary-color));
+  transform: translateZ(0px);
+  background-color: var(--primary-color);
+}
+
+.radio-button input[type="radio"]:checked + .radio::before {
+  opacity: 1;
+}
+
 </style>
