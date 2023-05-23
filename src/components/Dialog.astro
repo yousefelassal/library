@@ -3,12 +3,16 @@
 ---
 
 <dialog id="addDialog" class="flex flex-col items-center rounded-md w-80 h-96 bg-white shadow-md top-[20vh] left-[calc(50vw-10rem)] backdrop-filter">
-    <form method="dialog" class="p-4 flex flex-col gap-2 h-full">
-        <h1 class="text-lg text-center">Add your book</h1>
-        <input class="rounded-md h-8 w-48 p-2 bg-amber-800/10" type="text" uxp-quiet="true" id="author" placeholder="Author" />
+    <form method="dialog" class="p-4 flex flex-col gap-4 h-full w-full items-center">
+        <header class="flex justify-between">
+            <h1 class="text-lg text-center">Add your book</h1>
+            <button class="rounded-md bg-red-500 p-2" id="cancel" type="reset" uxp-variant="primary">Cancel</button>
+        </header>
+        <input class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner" type="text" uxp-quiet="true" id="title" placeholder="Title" maxlength="20"/>
+        <input class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner" type="text" uxp-quiet="true" id="author" placeholder="Author" maxlength="20"/>
+        <input class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner" type="number" uxp-quiet="true" id="pages" placeholder="Pages" maxlength="20"/>
         <footer>
-            <button id="cancel" type="reset" uxp-variant="primary">Cancel</button>
-            <button id="confirm" type="submit" uxp-variant="cta">Add</button>
+            <button class="rounded-md bg-[var(--primary-color)] p-2 w-56 text-[var(--secondary-color)] hover:bg-[#c1995b]" id="confirm" type="submit" uxp-variant="cta">Add</button>
         </footer>
     </form>
 </dialog>
