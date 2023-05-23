@@ -22,14 +22,26 @@ function addBookToLibrary(book) {
 
 const addBtn = document.getElementById('addBtn');
 const addDialog = document.getElementById('addDialog');
+const cancel = document.querySelector("#cancel");
 
 addBtn.addEventListener('click', () => {
+    addDialog.classList.remove("hide");
     addDialog.showModal();
 });
 
 //close dialog on click outside
 addDialog.addEventListener('click', (e) => {
     if(e.target === addDialog) {
-        addDialog.close();
+      addDialog.classList.add("hide");
+      setTimeout(() => {
+          addDialog.close();
+      },100);
     }
+});
+
+cancel.addEventListener("click", () => {
+    addDialog.classList.add("hide");
+    setTimeout(() => {
+        addDialog.close();
+    },100);
 });
