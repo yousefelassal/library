@@ -45,3 +45,5 @@ cancel.addEventListener("click", () => {
         addDialog.close();
     },105);
 });
+
+//elpages akhaleha duration lama eluser yedos 3la audiobook
