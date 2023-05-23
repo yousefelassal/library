@@ -28,7 +28,7 @@
             >
         </button>
         <input
-            class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner"
+            class="rounded-md h-9 w-56 p-2 bg-amber-700/10 shadow-inner"
             type="text"
             uxp-quiet="true"
             id="title"
@@ -36,7 +36,7 @@
             maxlength="20"
         />
         <input
-            class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner"
+            class="rounded-md h-9 w-56 p-2 bg-amber-700/10 shadow-inner"
             type="text"
             uxp-quiet="true"
             id="author"
@@ -44,26 +44,32 @@
             maxlength="20"
         />
         <input
-            class="rounded-md h-8 w-56 p-2 bg-amber-700/10 shadow-inner"
+            class="rounded-md h-9 w-56 p-2 bg-amber-700/10 shadow-inner"
             type="number"
             uxp-quiet="true"
             id="pages"
             placeholder="Pages"
             maxlength="20"
         />
-        <div class="flex items-center">
-            <label class="radio-button">
-                <input value="book" name="radio" type="radio">
+        <div class="flex justify-center">
+            <h1 class="text-left text-base place-self-start mt-[0.1rem]">Type</h1>
+            <label class="radio-button text-sm">
+                <input value="book" name="radio" type="radio" checked>
                 <span class="radio"></span>
                 Book
             </label>
             
-            <label class="radio-button">
+            <label class="radio-button text-sm">
                 <input value="audiobook" name="radio" type="radio">
                 <span class="radio"></span>
                 AudioBook
             </label>
         </div>
+        <label class="container flex place-items-center gap-2">
+            <input checked="checked" type="checkbox">
+            <span class="text-sm ml-8">Mark as read</span>
+            <div class="checkmark"></div>
+          </label>
         <footer>
             <button
                 class="rounded-md bg-[var(--primary-color)] p-2 w-56 text-[var(--secondary-color)] hover:bg-[#c1995b]"
@@ -113,9 +119,9 @@
 
     .radio-button {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   justify-content: center;
-  margin: 10px;
+  margin: 5px;
   position: relative;
   align-items: center;
 }
@@ -128,12 +134,11 @@
 .radio {
   position: relative;
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 2px solid var(--secondary-color);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  transform: translateZ(-25px);
   transition: all 0.3s ease-in-out;
 }
 
@@ -145,6 +150,63 @@
 
 .radio-button input[type="radio"]:checked + .radio::before {
   opacity: 1;
+}
+
+/* Hide the default checkbox */
+.container input {
+ position: absolute;
+ opacity: 0;
+ cursor: pointer;
+ height: 0;
+ width: 0;
+}
+
+.container {
+ display: block;
+ position: relative;
+ cursor: pointer;
+ font-size: 20px;
+ user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+ position: relative;
+ top: 0;
+ left: 0;
+ height: 1em;
+ width: 1em;
+ background: #606062;
+ border-radius: 5px;
+ box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.30), 0px 1px 1px rgba(0,5);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+ background-image: linear-gradient(var(--primary-color),#da952d)
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+ content: "";
+ position: absolute;
+ display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+ display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+ left: 0.4em;
+ top: 0.2em;
+ width: 0.25em;
+ height: 0.5em;
+ border: solid white;
+ border-width: 0 0.15em 0.15em 0;
+ transform: rotate(45deg);
 }
 
 </style>
