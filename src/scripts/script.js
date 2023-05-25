@@ -87,7 +87,7 @@ function render() {
     yourBooks.innerHTML = "";
     myLibrary.forEach((book, index) => {
         const bookDiv = document.createElement("div");
-        bookDiv.innerHTML = `<div class="book-container flex gap-4">
+        bookDiv.innerHTML = `<div class="book-container flex gap-4" data-book-index="${index}">
         <div class="container">
           <div class="book">
             <div class="front">
@@ -120,20 +120,24 @@ function render() {
             </div>
           </div>
         </div>
-        <div class="flex flex-col p-8">
-          <div class="bookTitle text-xl ml-4 text-[var(--secondary-color)]">${book.title}</div>
-          <div class="text-base ml-4 text-gray-500/50">${book.author}</div>
-          <button data-index="${index}" class="rounded-lg text-sm w-20 bg-red-500 hover:bg-red-600 shadow-sm p-2">Remove</button>
+        <div class="flex flex-col p-8 justify-center items-center">
+          <div class="bookTitle text-xl text-[var(--secondary-color)]">${book.title}</div>
+          <div class="text-base text-gray-500/50">${book.author}</div>
+          <button data-removeIndex="${index}" class="rounded-lg text-sm w-20 bg-red-500 hover:bg-red-600 shadow-sm p-2">Remove</button>
         </div>
       </div>`
         yourBooks.appendChild(bookDiv);
-        const removeBtn = document.querySelectorAll('[data-index]');
-        removeBtn.forEach((removeBtn) => {
-            removeBtn.addEventListener('click', (e) => {
-                const index = e.target.dataset.index;
-                myLibrary.splice(index, 1);
-                render();
-            });
+
+        const removeBtn = document.querySelector(`[data-removeIndex="${index}"]`);
+        removeBtn.addEventListener('click', () => {
+          removeBook(index);
+        })
       })
-    })
-  };
+    };
+
+    function removeBook(index) {
+      myLibrary.splice(index, 1);
+      render();
+    }
+
+      
