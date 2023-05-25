@@ -152,3 +152,40 @@ function render() {
       myLibrary[index].read === false ? myLibrary[index].read = true : myLibrary[index].read = false;
       render();
   }
+
+//search bar
+//openlibrary api
+  function getBooks(){
+    const searchResults = document.getElementById("searchResults");
+    let search = document.getElementById("search").value;
+    fetch(`https://openlibrary.org/search.json?q=${search}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      for(let i = 0; i < data.docs.length; i++){
+          searchResults.innerHTML += `<div class="book-container flex gap-4" data-search-index="${i}">
+        <div class="container">
+          <div class="book">
+            <div class="front">
+              <div class="cover">
+                <img src="https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-M.jpg">
+                <p class=book-title>${data.docs[i].title}</p>
+                <p class=author>${data.docs[i].author_name}</p>
+              </div>
+            </div>
+            <div class="left-side">
+              <h2>
+                <span>${data.docs[i].author_name}</span>
+                <span>${data.docs[i].title}</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col p-8 gap-2 justify-center items-center">
+          <div class="bookTitle text-xl text-[var(--secondary-color)]">${data.docs[i].title}</div>
+          <div class="text-base text-gray-500/50">${data.docs[i].author_name}</div>
+        </div>
+      </div>`
+    }
+  })
+};

@@ -106,6 +106,14 @@ box-shadow: 7px 7px 4px 0px rgba(151, 146, 153,0.6);
   width: 200px;
 }
 
+.cover img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 275px;
+}
+
 #eye-right {
   padding-left: 85px;
 }
