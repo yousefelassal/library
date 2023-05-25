@@ -156,56 +156,51 @@ function render() {
       render();
   }
 
+
+  //skeleton
+const searchResults = document.getElementById("searchResults");
+const bookTemplate = document.getElementById("book-template");
+for(let i = 0; i < 10; i++) {
+  searchResults.append(bookTemplate.content.cloneNode(true));
+}
 //search bar
 //openlibrary api
-const searchResults = document.getElementById("searchResults");
   function getBooks(){
     let search = document.getElementById("search").value;
     fetch(`https://openlibrary.org/search.json?q=${search}`)
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      for(let i = 0; i < data.docs.length; i++){
-          searchResults.innerHTML += `<div class="book-container flex gap-4" data-search-index="${i}">
-        <div class="container">
-          <div class="book">
-            <div class="front">
-              <div class="cover">
-              ${data.docs[i].cover_i === undefined ? `
-              <p class=book-title>${data.docs[i].title}</p>
-              <p class=author>${data.docs[i].author_name}</p>
-              <svg 
-                  id="eye-left"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="75" 
-                  height="100" 
-                  version="1.0">
-                  <path d="m 72.520861,60.915859 v 0 C 69.385207,53.011396 61.908243,46.570093 55.74346,42.387465 49.578631,38.204905 40.408101,36.818968 33.679899,37.051071 c -1.597953,0.05517 -2.931531,0.451253 -4.000736,1.188245 -0.738155,0.570053 -1.097854,1.127016 -1.079089,1.670881 0.02949,0.854739 0.93486,2.69053 2.716108,5.507379 0.805175,1.372521 1.234574,2.83577 1.288193,4.389751 0.131362,3.807345 -0.983571,6.879734 -3.344801,9.217182 -2.361227,2.337476 -5.686459,3.580206 -9.975699,3.728183 C 15.162859,62.894893 11.580282,61.559887 8.5361375,58.747669 5.4920363,55.935482 3.8975877,52.431474 3.7527937,48.235627 c -0.1769131,-5.1282 2.0835359,-9.776522 6.7813483,-13.944986 4.697855,-4.168379 11.041643,-6.390426 19.031387,-6.666142 8.662566,-0.298838 16.811229,2.201105 24.446015,7.499833 7.634738,5.298806 13.804506,13.895976 18.509317,25.791527 z" id="text2161" fill="#000" fill-opacity="1" stroke="none" stroke-width=".72233355px" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1"/>
-                </svg>
-                <svg 
-                  id="eye-right"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="75" 
-                  height="100" 
-                  version="1.0">
-                  <path d="m 72.520861,60.915859 v 0 C 69.385207,53.011396 61.908243,46.570093 55.74346,42.387465 49.578631,38.204905 40.408101,36.818968 33.679899,37.051071 c -1.597953,0.05517 -2.931531,0.451253 -4.000736,1.188245 -0.738155,0.570053 -1.097854,1.127016 -1.079089,1.670881 0.02949,0.854739 0.93486,2.69053 2.716108,5.507379 0.805175,1.372521 1.234574,2.83577 1.288193,4.389751 0.131362,3.807345 -0.983571,6.879734 -3.344801,9.217182 -2.361227,2.337476 -5.686459,3.580206 -9.975699,3.728183 C 15.162859,62.894893 11.580282,61.559887 8.5361375,58.747669 5.4920363,55.935482 3.8975877,52.431474 3.7527937,48.235627 c -0.1769131,-5.1282 2.0835359,-9.776522 6.7813483,-13.944986 4.697855,-4.168379 11.041643,-6.390426 19.031387,-6.666142 8.662566,-0.298838 16.811229,2.201105 24.446015,7.499833 7.634738,5.298806 13.804506,13.895976 18.509317,25.791527 z" id="text2161" fill="#000" fill-opacity="1" stroke="none" stroke-width=".72233355px" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1"/>
-                </svg>`
-              : `<img src="https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-M.jpg">`}
-              </div>
-            </div>
-            <div class="left-side">
-              <h2>
-                <span>${data.docs[i].author_name}</span>
-                <span>${data.docs[i].title}</span>
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col p-8 gap-2 justify-center items-center">
-          <div class="w-32 bookTitle text-xl text-[var(--secondary-color)]">${data.docs[i].title}</div>
-          <div class="w-32 text-base text-gray-500/50">${data.docs[i].author_name}</div>
-        </div>
-      </div>`
+      searchResults.innerHTML = "";
+      for(let i = 0; i < 10; i++){
+        let bookDiv = bookTemplate.content.cloneNode(true);
+        bookDiv.getElementById("book-title").textContent = data.docs[i].title;
+        bookDiv.getElementById("book-author").textContent = data.docs[i].author_name;
+        data.docs[i].cover_i === undefined ? bookDiv.getElementById("cover").innerHTML = `
+        <p class=book-title>${data.docs[i].title}</p>
+        <p class=author>${data.docs[i].author_name}</p>
+        <svg 
+            id="eye-left"
+            xmlns="http://www.w3.org/2000/svg"
+            width="75" 
+            height="100" 
+            version="1.0">
+            <path d="m 72.520861,60.915859 v 0 C 69.385207,53.011396 61.908243,46.570093 55.74346,42.387465 49.578631,38.204905 40.408101,36.818968 33.679899,37.051071 c -1.597953,0.05517 -2.931531,0.451253 -4.000736,1.188245 -0.738155,0.570053 -1.097854,1.127016 -1.079089,1.670881 0.02949,0.854739 0.93486,2.69053 2.716108,5.507379 0.805175,1.372521 1.234574,2.83577 1.288193,4.389751 0.131362,3.807345 -0.983571,6.879734 -3.344801,9.217182 -2.361227,2.337476 -5.686459,3.580206 -9.975699,3.728183 C 15.162859,62.894893 11.580282,61.559887 8.5361375,58.747669 5.4920363,55.935482 3.8975877,52.431474 3.7527937,48.235627 c -0.1769131,-5.1282 2.0835359,-9.776522 6.7813483,-13.944986 4.697855,-4.168379 11.041643,-6.390426 19.031387,-6.666142 8.662566,-0.298838 16.811229,2.201105 24.446015,7.499833 7.634738,5.298806 13.804506,13.895976 18.509317,25.791527 z" id="text2161" fill="#000" fill-opacity="1" stroke="none" stroke-width=".72233355px" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1"/>
+          </svg>
+          <svg 
+            id="eye-right"
+            xmlns="http://www.w3.org/2000/svg"
+            width="75" 
+            height="100" 
+            version="1.0">
+            <path d="m 72.520861,60.915859 v 0 C 69.385207,53.011396 61.908243,46.570093 55.74346,42.387465 49.578631,38.204905 40.408101,36.818968 33.679899,37.051071 c -1.597953,0.05517 -2.931531,0.451253 -4.000736,1.188245 -0.738155,0.570053 -1.097854,1.127016 -1.079089,1.670881 0.02949,0.854739 0.93486,2.69053 2.716108,5.507379 0.805175,1.372521 1.234574,2.83577 1.288193,4.389751 0.131362,3.807345 -0.983571,6.879734 -3.344801,9.217182 -2.361227,2.337476 -5.686459,3.580206 -9.975699,3.728183 C 15.162859,62.894893 11.580282,61.559887 8.5361375,58.747669 5.4920363,55.935482 3.8975877,52.431474 3.7527937,48.235627 c -0.1769131,-5.1282 2.0835359,-9.776522 6.7813483,-13.944986 4.697855,-4.168379 11.041643,-6.390426 19.031387,-6.666142 8.662566,-0.298838 16.811229,2.201105 24.446015,7.499833 7.634738,5.298806 13.804506,13.895976 18.509317,25.791527 z" id="text2161" fill="#000" fill-opacity="1" stroke="none" stroke-width=".72233355px" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1"/>
+          </svg>`
+
+        : bookDiv.getElementById("book-cover").src = `https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-M.jpg`;
+
+        bookDiv.getElementById("left-author") = data.docs[i].author_name;
+        bookDiv.getElementById("left-title") = data.docs[i].title;
+      searchResults.append(bookDiv);
     }
   })
 };
@@ -218,6 +213,7 @@ const shelfHeader = document.getElementById("shelf-header");
 searchBtn.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
     yourBooks.style.display = "none";
+    searchResults.style.display = "grid";
     shelfHeader.innerText = "Search Results";
     getBooks();
   }
@@ -233,11 +229,7 @@ clearBtn.addEventListener('click', function () {
   yourBooks.style.display = "flex";
   clearBtn.style.display = "none";
   shelfHeader.innerText = "Your Books";
+  searchResults.style.display = "none";
 });
 
 
-//skeleton
-const bookTemplate = document.getElementById("book-template");
-for(let i = 0; i < 10; i++) {
-  searchResults.innerHTML += bookTemplate.innerHTML;
-}
