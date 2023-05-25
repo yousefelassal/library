@@ -188,3 +188,7 @@ box-shadow: 7px 7px 4px 0px rgba(151, 146, 153,0.6);
   font-family: 'Acumin Pro Bold', sans-serif;
   font-size: 13px;
 } 
+
+.bookTitle{
+  font-family: 'Libre Caslon Text', serif;
+}
