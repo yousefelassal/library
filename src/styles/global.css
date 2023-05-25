@@ -35,15 +35,15 @@ html:has(#addDialog[open]){
 .container .book {
   position: relative;
   display: block;
-  width: 400px;
-  height: 550px;
+  width: 200px;
+  height: 275px;
   margin: 5% auto;
-  border-radius: 2px 4px 4px 2px;
+  border-radius: 1px 2px 2px 1px;
   background: linear-gradient(45deg,  #DAD5DC 0%, #f2ebf4 100%);
   font-family: acumin-pro, sans-serif;
-  -webkit-box-shadow: 13px 13px 8px 0px rgba(151, 146, 153,0.6);
--moz-box-shadow: 13px 13px 8px 0px rgba(151, 146, 153,0.6);
-box-shadow: 13px 13px 8px 0px rgba(151, 146, 153,0.6);
+  -webkit-box-shadow: 7px 7px 4px 0px rgba(151, 146, 153,0.6);
+-moz-box-shadow: 7px 7px 4px 0px rgba(151, 146, 153,0.6);
+box-shadow: 7px 7px 4px 0px rgba(151, 146, 153,0.6);
   font-weight: 400;
   color: #2b2b2b;
   -webkit-transform-style: preserve-3d;
@@ -84,14 +84,14 @@ box-shadow: 13px 13px 8px 0px rgba(151, 146, 153,0.6);
 }
 
 .container .front > div {
-  width: 400px;
-  height: 550px;
+  width: 200px;
+  height: 275px;
 }
 
 .container .left-side{
-  width: 40px;
-  left: -20px;
-  height: 550px;
+  width: 15px;
+  left: -5px;
+  height: 275px;
   background-color: rgba(232,229,234);
   -webkit-transform: rotate3d(0,1,0,-90deg);
   -moz-transform: rotate3d(0,1,0,-90deg);
@@ -102,38 +102,33 @@ box-shadow: 13px 13px 8px 0px rgba(151, 146, 153,0.6);
   position: absolute;
   top: 50%;
   left: 45%;
-  margin-top: -100px;
-  margin-left: -110px;
-  width: 300px;
+  margin-top: -75px;
+  margin-left: -80px;
+  width: 200px;
 }
 
 #eye-right {
-  padding-left: 185px;
+  padding-left: 85px;
 }
 
-.cover .num-up{
-  position: absolute;
-  top: 64px;
-  left: 47px;
-  letter-spacing: 50px;
-  transform: rotate(-90deg);
-}
-
-.cover .num-down{
-  position: relative;
-  top: 65px;
-  left: -95px;
-  transform: rotate(-90deg);
-}
 
 .author{
   font-family: acumin-pro, sans-serif;
   font-weight: 400;
   position: absolute;
-  top: 475px;
-  left: 50px;
+  top: 225px;
+  left: 15px;
   opacity: .8;
   }
+
+  .book-title{
+    font-family: acumin-pro, sans-serif;
+    font-weight: 400;
+    position: absolute;
+    top: 205px;
+    left: 15px;
+    }
+  
 
 .container .front > div {
   border-radius: 0 3px 3px 0;
@@ -163,7 +158,7 @@ box-shadow: 13px 13px 8px 0px rgba(151, 146, 153,0.6);
 
 
 .container h2 {
-  width: 500px;
+  width: 200px;
   height: 40px;
   color: #2b2b2b;
   font-size: 15px;
@@ -185,7 +180,7 @@ box-shadow: 13px 13px 8px 0px rgba(151, 146, 153,0.6);
 
 .left-side h2 span:first-child {
   font-weight: 400;
-  font-size: 13px;
+  font-size: 8px;
   padding-right: 20px;
 }
 
