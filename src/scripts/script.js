@@ -79,6 +79,9 @@ form.addEventListener("submit", (e) => {
         addDialog.close();
     },105);
     form.reset();
+    searchResults.innerHTML = "";
+    document.getElementById("search").value = "";
+    yourBooks.style.display = "flex";
     render();
 });
 
