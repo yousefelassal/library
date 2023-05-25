@@ -38,14 +38,16 @@ import Loader from './Loader.astro';
         <h2 id="shelfHeading" class="h2author text-sm text-right font-bold sticky top-28" style="transform: rotate(180deg);">Your Books</h2>
     </div>
     <div id="yourBooks" class="absolute top-24 left-20 flex gap-8 flex-wrap"></div>
-    <button id="clear" class="hidden sticky top-24 left-[90vw] rounded-md bg-red-500/25 p-1">
-        Clear
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="
-                M6 18L18 6M6 6l12 12
-            " />
-        </svg>
-    </button>
+    <div class="absolute top-24 left-[90vw] min-h-screen">
+        <button id="clear" class="hidden sticky top-24 rounded-md bg-red-500/25 p-1 z-20">
+            Clear
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="
+                    M6 18L18 6M6 6l12 12
+                " />
+            </svg>
+        </button>
+    </div>
     <div id="searchResults" class="absolute top-24 left-20 grid-container w-[95vw]">
         <div class="hidden absolute left-[40vw]" id="loader">
             <Loader />
