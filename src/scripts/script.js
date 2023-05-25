@@ -214,12 +214,18 @@ const searchResults = document.getElementById("searchResults");
 //TO-DO: position el clear btn
 const searchBtn = document.getElementById("search");
 const clearBtn = document.getElementById("clear");
+const loader = document.getElementById("loader");
 searchBtn.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
     yourBooks.style.display = "none";
-    clearBtn.style.display = "flex";
+    loader.style.display = "block";
     getBooks();
   }
+});
+
+window.addEventListener('load', () => {
+  loader.style.display = "none";
+  clearBtn.style.display = "flex";
 });
 
 clearBtn.addEventListener('click', function () {
