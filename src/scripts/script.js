@@ -1,19 +1,12 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read,type) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
-
-  this.info = () => {
-    return `${title} by ${author}, ${pages} pages, ${read ? 'read' : 'not read yet'}`;
-  };
+  this.type = type;
 }
-
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false);
-console.log(theHobbit.info());
-console.log(Object.getPrototypeOf(theHobbit)===Book.prototype);
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
@@ -46,4 +39,70 @@ cancel.addEventListener("click", () => {
     },105);
 });
 
-//elpages akhaleha duration lama eluser yedos 3la audiobook
+const pages = document.getElementById("pages");
+    const type = document.getElementsByName("radio");
+    const mark = document.getElementById("mark");
+
+    function changePages() {
+        if (type[1].checked) {
+            pages.placeholder = "Minutes";
+            mark.innerHTML = "Mark as listened";
+
+        } else {
+            pages.placeholder = "Pages";
+            mark.innerHTML = "Mark as read";
+
+        }
+    }
+
+    type[0].addEventListener("click", changePages);
+    type[1].addEventListener("click", changePages);
+
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const title = document.querySelector("#title").value;
+    const author = document.querySelector("#author").value;
+    const pages = document.querySelector("#pages").value;
+    const read = document.querySelector("#read").checked;
+    const radio = document.getElementsByName('radio');
+    let type = "";
+    if(radio[0].checked) {
+        type = "Book";
+    } else if(radio[1].checked) {
+        type = "AudioBook";
+    }
+    const book = new Book(title, author, pages, read, type);
+    addBookToLibrary(book);
+    addDialog.classList.add("hide");
+    setTimeout(() => {
+        addDialog.close();
+    },105);
+    render();
+});
+
+function render() {
+    const table = document.querySelector("table");
+    const tbody = document.querySelector("tbody");
+    tbody.innerHTML = "";
+    myLibrary.forEach((book, index) => {
+        const row = tbody.insertRow();
+        row.setAttribute("data-index", index);
+        const title = row.insertCell();
+        title.textContent = book.title;
+        const author = row.insertCell();
+        author.textContent = book.author;
+        const pages = row.insertCell();
+        pages.textContent = book.pages;
+        const read = row.insertCell();
+        read.textContent = book.read;
+        const remove = row.insertCell();
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.addEventListener("click", () => {
+            myLibrary.splice(index, 1);
+            render();
+        });
+        remove.appendChild(removeBtn);
+    });
+}

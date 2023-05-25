@@ -66,7 +66,7 @@
             </label>
         </div>
         <label class="container flex place-items-center gap-2">
-            <input checked="checked" type="checkbox">
+            <input id="read" checked="checked" type="checkbox">
             <span id="mark" class="text-sm ml-8">Mark as read</span>
             <div class="checkmark"></div>
           </label>
@@ -210,26 +210,3 @@
 }
 
 </style>
-
-
-<script>
-    const pages = document.getElementById("pages");
-    const type = document.getElementsByName("radio");
-    const mark = document.getElementById("mark");
-
-    function changePages() {
-        if (type[1].checked) {
-            pages.placeholder = "Minutes";
-            mark.innerHTML = "Mark as listened";
-
-        } else {
-            pages.placeholder = "Pages";
-            mark.innerHTML = "Mark as read";
-
-        }
-    }
-
-    type[0].addEventListener("click", changePages);
-    type[1].addEventListener("click", changePages);
-
-</script>
