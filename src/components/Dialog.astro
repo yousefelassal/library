@@ -68,7 +68,7 @@
                 AudioBook
             </label>
         </div>
-        <label class="container flex place-items-center gap-2">
+        <label class="chb-container flex place-items-center gap-2">
             <input id="read" checked="checked" type="checkbox">
             <span id="mark" class="text-sm ml-8">Mark as read</span>
             <div class="checkmark"></div>
@@ -156,7 +156,7 @@
 }
 
 /* Hide the default checkbox */
-.container input {
+.chb-container input {
  position: absolute;
  opacity: 0;
  cursor: pointer;
@@ -164,7 +164,7 @@
  width: 0;
 }
 
-.container {
+.chb-container {
  display: block;
  position: relative;
  cursor: pointer;
@@ -185,7 +185,7 @@
 }
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.chb-container input:checked ~ .checkmark {
  background-image: linear-gradient(var(--primary-color),#da952d)
 }
 
@@ -197,12 +197,12 @@
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.chb-container input:checked ~ .checkmark:after {
  display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.chb-container .checkmark:after {
  left: 0.4em;
  top: 0.2em;
  width: 0.25em;
