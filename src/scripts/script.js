@@ -210,17 +210,21 @@ const searchResults = document.getElementById("searchResults");
   })
 };
 
+//TO-DO: set delay lel clear btn 
+//TO-DO: position el clear btn
 const searchBtn = document.getElementById("search");
+const clearBtn = document.getElementById("clear");
 searchBtn.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
     yourBooks.style.display = "none";
+    clearBtn.style.display = "flex";
     getBooks();
   }
 });
 
-const clearBtn = document.getElementById("clear");
 clearBtn.addEventListener('click', function () {
   searchResults.innerHTML = "";
   document.getElementById("search").value = "";
   yourBooks.style.display = "flex";
+  clearBtn.style.display = "none";
 });
