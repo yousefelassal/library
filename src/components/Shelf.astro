@@ -54,7 +54,7 @@ import Dialog from './Dialog.astro';
                     <div class="book">
                     <div class="front">
                         <div class="cover" id="cover">
-                            <img class="skeleton" id="book-cover">
+                            <img class="skeleton" id="book-cover" alt="" src=""/>
                         </div>
                     </div>
                     <div class="left-side">
@@ -83,6 +83,10 @@ import Dialog from './Dialog.astro';
 <style>
 
     /* skeleton */
+
+    img {
+    text-indent: -10000px
+    }
     .skeleton {
         animation: skeleton-loading 1s linear infinite alternate;
     }
