@@ -82,8 +82,12 @@ form.addEventListener("submit", (e) => {
     render();
 });
 
+const yourBooks = document.querySelector("#yourBooks");
 function render() {
+    yourBooks.innerHTML = "";
     myLibrary.forEach((book, index) => {
+        const bookDiv = document.createElement("div");
+        
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
         removeBtn.addEventListener("click", () => {
