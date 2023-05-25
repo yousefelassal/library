@@ -34,14 +34,20 @@ import Dialog from './Dialog.astro';
         <Dialog />
     </div>
     <div class="absolute top-24 left-12 min-h-screen">
-        <h2 class="h2author text-sm text-right font-bold sticky top-28" style="transform: rotate(180deg);">Your Books</h2>
+        <h2 id="shelfHeading" class="h2author text-sm text-right font-bold sticky top-28" style="transform: rotate(180deg);">Your Books</h2>
     </div>
     <div id="yourBooks" class="absolute top-24 left-20 flex gap-8"></div>
-    <div id="searchResults" class="absolute top-24 left-20 grid grid-cols-3"></div>
+    <div id="searchResults" class="absolute top-24 left-20 grid-container w-[95vw]"></div>
 </div>
 
 
 <style>
+
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
 
     .title{
         font-family: 'Libre Caslon Text', serif;
