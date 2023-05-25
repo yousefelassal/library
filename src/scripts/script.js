@@ -189,3 +189,10 @@ function render() {
     }
   })
 };
+
+const searchBtn = document.getElementById("search");
+searchBtn.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    getBooks();
+  }
+});
