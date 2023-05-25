@@ -78,31 +78,17 @@ form.addEventListener("submit", (e) => {
     setTimeout(() => {
         addDialog.close();
     },105);
+    form.reset();
     render();
 });
 
 function render() {
-    const table = document.querySelector("table");
-    const tbody = document.querySelector("tbody");
-    tbody.innerHTML = "";
     myLibrary.forEach((book, index) => {
-        const row = tbody.insertRow();
-        row.setAttribute("data-index", index);
-        const title = row.insertCell();
-        title.textContent = book.title;
-        const author = row.insertCell();
-        author.textContent = book.author;
-        const pages = row.insertCell();
-        pages.textContent = book.pages;
-        const read = row.insertCell();
-        read.textContent = book.read;
-        const remove = row.insertCell();
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
         removeBtn.addEventListener("click", () => {
             myLibrary.splice(index, 1);
             render();
         });
-        remove.appendChild(removeBtn);
     });
 }
