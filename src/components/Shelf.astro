@@ -15,7 +15,7 @@ import Dialog from './Dialog.astro';
         </div>
     </div>
     <div class="absolute top-[-18rem] left-[55vw] flex gap-2">
-        <h2 class="author text-base text-right font-bold" style="transform: rotate(180deg);">Author</h2>
+        <h2 class="h2author text-base text-right font-bold" style="transform: rotate(180deg);">Author</h2>
         <div class="rounded-2xl bg-[var(--primary-color)] h-64 w-36 grid shadow-xl">
             <h1 class="title text-[0.9rem] place-self-center text-center pt-4">Fyodor Dostoevsky</h1>
             <h1 class="text-[0.7rem] place-self-center text-center text-black/50">13 novels</h1>
@@ -34,7 +34,7 @@ import Dialog from './Dialog.astro';
         <Dialog />
     </div>
     <div class="absolute top-24 left-12 min-h-screen">
-        <h2 class="author text-sm text-right font-bold sticky top-28" style="transform: rotate(180deg);">Your Books</h2>
+        <h2 class="h2author text-sm text-right font-bold sticky top-28" style="transform: rotate(180deg);">Your Books</h2>
     </div>
     <div id="yourBooks" class="absolute top-24 left-20 flex gap-4">
 
@@ -50,7 +50,7 @@ import Dialog from './Dialog.astro';
         color: var(--secondary-color);
     }
 
-    .author{
+    h2.h2author{
         font-family: 'Libre Caslon Text', serif;
         color: var(--secondary-color);
         writing-mode:vertical-rl;
