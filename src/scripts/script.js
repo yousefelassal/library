@@ -123,6 +123,7 @@ function render() {
         <div class="flex flex-col p-8 justify-center items-center">
           <div class="bookTitle text-xl text-[var(--secondary-color)]">${book.title}</div>
           <div class="text-base text-gray-500/50">${book.author}</div>
+          <div class="text-sm text-gray-500/50">${book.pages} ${book.type === "Book"? `Pages` : `Minutes` }</div>
           <button data-removeIndex="${index}" class="rounded-lg text-sm w-20 bg-red-500 hover:bg-red-600 shadow-sm p-2">Remove</button>
         </div>
       </div>`
