@@ -113,8 +113,8 @@ function render() {
           </div>
           <div class="left-side">
             <h2>
-              <span>George Orwell</span>
-              <span>1984</span>
+              <span>${book.author}</span>
+              <span>${book.title}</span>
             </h2>
           </div>
         </div>
