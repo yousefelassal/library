@@ -198,8 +198,8 @@ for(let i = 0; i < 10; i++) {
 
         : bookDiv.getElementById("book-cover").src = `https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-M.jpg`;
 
-        bookDiv.getElementById("left-author") = data.docs[i].author_name;
-        bookDiv.getElementById("left-title") = data.docs[i].title;
+        bookDiv.getElementById("left-author").textContent = data.docs[i].author_name;
+        bookDiv.getElementById("left-title").textContent = data.docs[i].title;
       searchResults.append(bookDiv);
     }
   })
@@ -213,7 +213,7 @@ const shelfHeader = document.getElementById("shelf-header");
 searchBtn.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
     yourBooks.style.display = "none";
-    searchResults.style.display = "grid";
+    searchResults.style.display = "flex";
     shelfHeader.innerText = "Search Results";
     getBooks();
   }
