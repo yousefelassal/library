@@ -155,8 +155,8 @@ function render() {
 
 //search bar
 //openlibrary api
+const searchResults = document.getElementById("searchResults");
   function getBooks(){
-    const searchResults = document.getElementById("searchResults");
     let search = document.getElementById("search").value;
     fetch(`https://openlibrary.org/search.json?q=${search}`)
     .then(response => response.json())
@@ -210,6 +210,14 @@ function render() {
 const searchBtn = document.getElementById("search");
 searchBtn.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
+    yourBooks.style.display = "none";
     getBooks();
   }
+});
+
+const clearBtn = document.getElementById("clear");
+clearBtn.addEventListener('click', function () {
+  searchResults.innerHTML = "";
+  document.getElementById("search").value = "";
+  yourBooks.style.display = "flex";
 });
