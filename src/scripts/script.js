@@ -199,8 +199,8 @@ function render() {
           </div>
         </div>
         <div class="flex flex-col p-8 gap-2 justify-center items-center">
-          <div class="flex bookTitle text-xl text-[var(--secondary-color)]">${data.docs[i].title}</div>
-          <div class="flex text-base text-gray-500/50">${data.docs[i].author_name}</div>
+          <div class="w-32 bookTitle text-xl text-[var(--secondary-color)]">${data.docs[i].title}</div>
+          <div class="w-32 text-base text-gray-500/50">${data.docs[i].author_name}</div>
         </div>
       </div>`
     }
