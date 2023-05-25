@@ -2,6 +2,7 @@
 import Search from './Search.astro';
 import AddBtn from './AddBtn.astro';
 import Dialog from './Dialog.astro';
+import Loader from './Loader.astro';
 ---
 
 <div class="relative min-w-full top-[60vh] bg-[#EAE1D4] h-8 shadow-xl">
@@ -46,6 +47,9 @@ import Dialog from './Dialog.astro';
         </svg>
     </button>
     <div id="searchResults" class="absolute top-24 left-20 grid-container w-[95vw]">
+        <div class="hidden absolute left-[40vw]" id="loader">
+            <Loader />
+        </div>
     </div>
 </div>
 
