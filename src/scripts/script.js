@@ -123,11 +123,11 @@ function render() {
         <div class="flex flex-col p-8">
           <div class="bookTitle text-xl ml-4 text-[var(--secondary-color)]">${book.title}</div>
           <div class="text-base ml-4 text-gray-500/50">${book.author}</div>
+          <button id="removeBook" class="rounded-lg text-sm w-20 bg-red-500 hover:bg-red-600 shadow-sm p-2">Remove</button>
         </div>
       </div>`
         yourBooks.appendChild(bookDiv);
-        const removeBtn = document.createElement("button");
-        removeBtn.textContent = "Remove";
+        const removeBtn = document.getElementById("removeBook");
         removeBtn.addEventListener("click", () => {
             myLibrary.splice(index, 1);
             render();
