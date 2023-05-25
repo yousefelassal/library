@@ -149,11 +149,6 @@ function render() {
     }
 
     function changeBook(index) {
-      if (myLibrary[index].type === "Book") {
-        myLibrary[index].read === false ? myLibrary[index].read = true : myLibrary[index].read = false;
-      if (myLibrary[index].type === "AudioBook") {
-          myLibrary[index].listened === false ? myLibrary[index].listened = true : myLibrary[index].listened = false;
-        }
+      myLibrary[index].read === false ? myLibrary[index].read = true : myLibrary[index].read = false;
       render();
-    }
   }
