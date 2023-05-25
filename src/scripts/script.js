@@ -214,17 +214,16 @@ const searchResults = document.getElementById("searchResults");
 //TO-DO: position el clear btn
 const searchBtn = document.getElementById("search");
 const clearBtn = document.getElementById("clear");
-const loader = document.getElementById("loader");
+const shelfHeader = document.getElementById("shelf-header");
 searchBtn.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
     yourBooks.style.display = "none";
-    loader.style.display = "block";
+    shelfHeader.innerText = "Search Results";
     getBooks();
   }
 });
 
-window.addEventListener('load', () => {
-  loader.style.display = "none";
+searchResults.addEventListener('load', () => {
   clearBtn.style.display = "flex";
 });
 
@@ -233,4 +232,12 @@ clearBtn.addEventListener('click', function () {
   document.getElementById("search").value = "";
   yourBooks.style.display = "flex";
   clearBtn.style.display = "none";
+  shelfHeader.innerText = "Your Books";
 });
+
+
+//skeleton
+const bookTemplate = document.getElementById("book-template");
+for(let i = 0; i < 10; i++) {
+  searchResults.innerHTML += bookTemplate.innerHTML;
+}
