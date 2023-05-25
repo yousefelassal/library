@@ -216,11 +216,10 @@ searchBtn.addEventListener('keypress', function (e) {
     searchResults.style.display = "flex";
     shelfHeader.innerText = "Search Results";
     getBooks();
+      setTimeout(() => {
+        clearBtn.style.display = "flex";
+      }, 1000);
   }
-});
-
-searchResults.addEventListener('load', () => {
-  clearBtn.style.display = "flex";
 });
 
 clearBtn.addEventListener('click', function () {
