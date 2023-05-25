@@ -20,5 +20,5 @@
     <td align="center">CSS Framework</td>
   </tr>
 </table>
-  <p><a href="https://ui-avatars.com/">ui-avatars</a> to generate avatars with initials</p>
+  <p><a href="https://openlibrary.org/dev/docs/api/search">Open Library</a> Search API</p>
 </div>
