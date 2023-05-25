@@ -124,7 +124,7 @@ function render() {
           <div class="bookTitle text-xl text-[var(--secondary-color)]">${book.title}</div>
           <div class="text-base text-gray-500/50">${book.author}</div>
           <div class="text-sm text-gray-500/50">${book.pages} ${book.type === "Book" ? ` Pages` : ` Minutes` }</div>
-          <button data-changeIndex="${index}" class="rounded-lg text-sm w-28 shadow-sm p-2 ${book.read === true ? `bg-green-400 hover:bg-green-500` : `bg-pink-500 hover:bg-pink-600`}">${book.read === true ? (book.type === "Book" ? `Read` : `Listened`) : (book.type === "Book") ? "Didn't Read" : "Didn't Listen"}</button>
+          <button data-changeIndex="${index}" class="rounded-lg text-sm w-28 shadow-sm p-2 ${book.read === true ? `bg-green-400 hover:bg-green-500` : `bg-pink-500 hover:bg-pink-600`}" title="${book.type === "Book" ? `Mark as didn't read?` : `Mark as didn't listen?`}">${book.read === true ? (book.type === "Book" ? `Read` : `Listened`) : (book.type === "Book") ? "Didn't Read" : "Didn't Listen"}</button>
           <button data-removeIndex="${index}" class="rounded-lg text-sm w-28 bg-red-500 hover:bg-red-600 shadow-sm p-2">Remove</button>
         </div>
       </div>`
