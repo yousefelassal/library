@@ -19,7 +19,6 @@ const cancel = document.querySelector("#cancel");
 
 addBtn.addEventListener('click', () => {
     addDialog.classList.remove("hide");
-    addDialog.classList.remove("dialog-hidden");
     addDialog.showModal();
 });
 
@@ -29,7 +28,6 @@ addDialog.addEventListener('click', (e) => {
       addDialog.classList.add("hide");
       setTimeout(() => {
           addDialog.close();
-          addDialog.classList.add("dialog-hidden");
       },105);
     }
 });
@@ -38,7 +36,6 @@ cancel.addEventListener("click", () => {
     addDialog.classList.add("hide");
     setTimeout(() => {
         addDialog.close();
-        addDialog.classList.add("dialog-hidden");
     },105);
 });
 
