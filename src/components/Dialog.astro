@@ -3,7 +3,7 @@
 
 <dialog
     id="addDialog"
-    class="flex flex-col items-center rounded-xl w-80 h-[22.5rem] bg-white shadow-md top-[20vh] left-[calc(50vw-10rem)] backdrop-filter"
+    class="dialog-hidden flex flex-col items-center rounded-xl w-80 h-[22.5rem] bg-white shadow-md top-[20vh] left-[calc(50vw-10rem)] backdrop-filter"
 >
     <form
         method="dialog"
@@ -96,6 +96,10 @@
 
     dialog.hide {
         animation: fadeOut 0.1s ease-in-out;
+    }
+
+    dialog.dialog-hidden{
+        display: none;
     }
 
     @keyframes fadeIn {
